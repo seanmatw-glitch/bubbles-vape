@@ -9,16 +9,12 @@ export default function NewsletterPopup() {
   const [smsOptIn, setSmsOptIn] = useState(false);
 
   useEffect(() => {
-    const dismissed = localStorage.getItem("bubbles-popup-dismissed");
-    if (dismissed) return;
-
     const timer = setTimeout(() => setVisible(true), 5000);
     return () => clearTimeout(timer);
   }, []);
 
   function handleClose() {
     setVisible(false);
-    localStorage.setItem("bubbles-popup-dismissed", "true");
   }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -26,7 +22,6 @@ export default function NewsletterPopup() {
     setSubmitted(true);
     setTimeout(() => {
       setVisible(false);
-      localStorage.setItem("bubbles-popup-dismissed", "true");
     }, 2500);
   }
 
