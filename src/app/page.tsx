@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AgeGate from "@/components/AgeGate";
 import NewsletterPopup from "@/components/NewsletterPopup";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -13,6 +14,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
+      <AgeGate />
       <NewsletterPopup />
       <Header />
       <main>
