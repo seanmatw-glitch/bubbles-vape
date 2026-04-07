@@ -15,7 +15,7 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Bubbles. All rights reserved.
         </p>
         <a
-          href="https://www.instagram.com/bubblesvape/"
+          href="https://www.instagram.com/bubblesvapeco?igsh=MWNncXFneTZsNWtxMA%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
           className="text-ivory/80 hover:text-ivory transition-colors"

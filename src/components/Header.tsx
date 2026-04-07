@@ -56,7 +56,7 @@ export default function Header() {
             Contact
           </a>
           <a
-            href="https://www.instagram.com/bubblesvape/"
+            href="https://www.instagram.com/bubblesvapeco?igsh=MWNncXFneTZsNWtxMA%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-periwinkle transition-colors"
