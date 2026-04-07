@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Image from "next/image";
 
 export default function ContactForm() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -19,6 +20,15 @@ export default function ContactForm() {
     <>
       <section id="contact" className="py-20 px-6 bg-soft-periwinkle/20">
         <div className="max-w-2xl mx-auto text-center">
+          <div className="flex justify-center mb-4">
+            <Image
+              src="/images/drip-mark.png"
+              alt=""
+              width={80}
+              height={100}
+              className="w-[35px] sm:w-[45px] h-auto opacity-30 mix-blend-multiply"
+            />
+          </div>
           <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-periwinkle mb-8">
             Contact Us
           </h2>
