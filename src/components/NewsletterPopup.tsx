@@ -9,8 +9,11 @@ export default function NewsletterPopup() {
   const [smsOptIn, setSmsOptIn] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 5000);
-    return () => clearTimeout(timer);
+    function startTimer() {
+      setTimeout(() => setVisible(true), 5000);
+    }
+    window.addEventListener("ageVerified", startTimer);
+    return () => window.removeEventListener("ageVerified", startTimer);
   }, []);
 
   function handleClose() {
