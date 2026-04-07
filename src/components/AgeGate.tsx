@@ -9,22 +9,9 @@ export default function AgeGate() {
 
   useEffect(() => {
     setMounted(true);
-    try {
-      if (localStorage.getItem("ageVerified") === "true") {
-        setVisible(false);
-      }
-    } catch {
-      // localStorage not available
-    }
   }, []);
 
   function handleYes() {
-    try {
-      localStorage.setItem("ageVerified", "true");
-    } catch {
-      // fallback to cookie
-      document.cookie = "ageVerified=true; max-age=2592000; path=/";
-    }
     setVisible(false);
   }
 
