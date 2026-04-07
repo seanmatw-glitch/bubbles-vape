@@ -30,7 +30,7 @@ export default function About() {
         {/* Copy area — no bubbles */}
         <div className="relative z-10 pb-16 px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-ivory/90 text-lg sm:text-xl leading-relaxed tracking-wide">
+            <p className="text-ivory/90 text-lg sm:text-xl leading-relaxed tracking-wide font-semibold">
               Bubbles is all about bright, juicy flavors that burst across your
               taste buds in waves of sweet, tangy bliss. From the first inhale to
               the draw, you&apos;ll be met with mouth-watering terp profiles that
