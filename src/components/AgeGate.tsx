@@ -4,19 +4,27 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function AgeGate() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const verified = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("ageVerified="));
-    if (!verified) {
-      setVisible(true);
+    setMounted(true);
+    try {
+      if (localStorage.getItem("ageVerified") === "true") {
+        setVisible(false);
+      }
+    } catch {
+      // localStorage not available
     }
   }, []);
 
   function handleYes() {
-    document.cookie = "ageVerified=true; max-age=2592000; path=/";
+    try {
+      localStorage.setItem("ageVerified", "true");
+    } catch {
+      // fallback to cookie
+      document.cookie = "ageVerified=true; max-age=2592000; path=/";
+    }
     setVisible(false);
   }
 
@@ -24,7 +32,7 @@ export default function AgeGate() {
     window.location.href = "https://www.google.com";
   }
 
-  if (!visible) return null;
+  if (!mounted || !visible) return null;
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-periwinkle">
