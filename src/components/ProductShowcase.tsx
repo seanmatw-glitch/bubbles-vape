@@ -1,0 +1,215 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
+function FlavorAccordion({
+  name,
+  description,
+  defaultOpen = false,
+}: {
+  name: string;
+  description: string;
+  defaultOpen?: boolean;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+
+  return (
+    <div className="border-b border-gray-800">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between py-4 cursor-pointer text-left"
+      >
+        <span className="font-[family-name:var(--font-display)] text-lg font-bold text-gray-900 uppercase">
+          {name}
+        </span>
+        <svg
+          className={`w-5 h-5 text-gray-700 transition-transform duration-300 ${open ? "" : "rotate-180"}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+        </svg>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          open ? "max-h-48 pb-4" : "max-h-0"
+        }`}
+      >
+        <p className="text-gray-700 leading-relaxed">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+const products = [
+  {
+    image: "/images/Lucid Yellow Cart.jpg",
+    category: "Sativa Flavors",
+    flavors: [
+      {
+        name: "Atomic Burst",
+        description:
+          "The classic combo of Cherry, Blue Raspberry, and Lime take you straight into the heart of summer. Bright, tangy, and energizing, it's like a sparkler for your taste buds.",
+      },
+    ],
+  },
+  {
+    image: "/images/Lucid Purple Cart.jpg",
+    category: "Indica Flavors",
+    flavors: [
+      {
+        name: "Blue Raz",
+        description:
+          "A sweet, smooth wave of ripened raspberries with a tangy twist of citrus. Rich and mellow, it's the kind of flavor that lingers like the perfect summer sunset.",
+      },
+      {
+        name: "Sweet Dreamz",
+        description:
+          "Smooth, fruity sweetness that glides on with mellow vibes and juicy notes.",
+      },
+    ],
+  },
+  {
+    image: "/images/Lucid Pink Cart.jpg",
+    category: "Hybrid Flavors",
+    flavors: [
+      {
+        name: "Tiger's Blood",
+        description:
+          "Juicy watermelon and bright citrus join forces for a wild, tropical flavor mash-up.",
+      },
+      {
+        name: "Watermelon Ice",
+        description:
+          "Fresh, juicy watermelon, cooled down and refreshing.",
+      },
+    ],
+  },
+  {
+    image: "/images/Lucid Green Cart.jpg",
+    category: "Exotic Flavors",
+    flavors: [
+      {
+        name: "Breezy Blast",
+        description:
+          "You'll feel the island breeze with every pull. Fully loaded with tropical lime flavor. Crisp, zesty, and uplifting, it's a getaway in every hit.",
+      },
+    ],
+  },
+];
+
+export default function ProductShowcase() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  function handleClose() {
+    setActiveIndex(null);
+  }
+
+  const active = activeIndex !== null ? products[activeIndex] : null;
+
+  return (
+    <>
+      <section className="py-12 px-6 bg-ivory">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex justify-center mb-2">
+            <Image
+              src="/images/our-flavors-logo.png"
+              alt="Our Flavors"
+              width={400}
+              height={120}
+              className="h-auto w-[280px] sm:w-[400px]"
+            />
+          </div>
+          <p className="text-periwinkle text-center mb-8 text-lg tracking-widest uppercase">
+            Premium All-In-One Vape
+          </p>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {products.map((product, i) => (
+              <button
+                key={product.category}
+                onClick={() => setActiveIndex(i)}
+                className="group flex flex-col items-center cursor-pointer text-left"
+              >
+                <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
+                  <Image
+                    src={product.image}
+                    alt={`Bubbles ${product.category}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                </div>
+                <h3 className="mt-4 font-[family-name:var(--font-display)] text-base sm:text-lg font-bold text-periwinkle uppercase tracking-wider text-center">
+                  {product.category}
+                </h3>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Flavor detail modal */}
+      {active && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={handleClose}
+          />
+          <div className="relative bg-ivory rounded-2xl shadow-2xl max-w-3xl w-full overflow-hidden animate-[slideUp_0.4s_ease-out]">
+            <button
+              onClick={handleClose}
+              className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 hover:bg-white transition-colors text-gray-500 cursor-pointer"
+              aria-label="Close"
+            >
+              &times;
+            </button>
+
+            <div className="flex flex-col sm:flex-row">
+              {/* Image side */}
+              <div className="relative w-full sm:w-2/5 flex-shrink-0">
+                <div className="relative aspect-[3/4]">
+                  <Image
+                    src={active.image}
+                    alt={active.category}
+                    fill
+                    className="object-cover sm:rounded-l-2xl"
+                    sizes="400px"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-5">
+                    <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-white uppercase tracking-wider">
+                      {active.category}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content side — accordion flavors */}
+              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-center">
+                <div>
+                  {active.flavors.map((flavor, i) => (
+                    <FlavorAccordion
+                      key={flavor.name}
+                      name={flavor.name}
+                      description={flavor.description}
+                      defaultOpen={i === 0}
+                    />
+                  ))}
+                </div>
+                <a
+                  href="#find-us"
+                  onClick={handleClose}
+                  className="mt-6 block w-full py-3 rounded-xl bg-periwinkle text-white font-bold text-center hover:bg-soft-periwinkle hover:text-gray-800 transition-colors shadow-md cursor-pointer"
+                >
+                  Shop Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
