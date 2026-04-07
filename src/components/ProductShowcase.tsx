@@ -111,7 +111,7 @@ export default function ProductShowcase() {
 
   return (
     <>
-      <section className="py-12 px-6 bg-ivory">
+      <section id="our-flavors" className="py-12 px-6 bg-ivory">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-2">
             <Image

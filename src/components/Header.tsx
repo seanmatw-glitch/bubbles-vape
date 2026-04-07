@@ -32,6 +32,12 @@ export default function Header() {
         </a>
         <div className="flex items-center gap-6">
           <a
+            href="#our-flavors"
+            className="text-sm font-semibold text-gray-600 hover:text-periwinkle transition-colors hidden sm:block"
+          >
+            Our Flavors
+          </a>
+          <a
             href="#about"
             className="text-sm font-semibold text-gray-600 hover:text-periwinkle transition-colors hidden sm:block"
           >
