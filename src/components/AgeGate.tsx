@@ -27,7 +27,9 @@ export default function AgeGate() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-b from-soft-coral via-periwinkle to-soft-jade">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-periwinkle">
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-soft-coral via-periwinkle to-soft-jade" />
       {/* Lots of floating bubbles — mostly large, a few small */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Top area */}
