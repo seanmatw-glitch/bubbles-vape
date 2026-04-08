@@ -12,6 +12,7 @@ export default function AgeGate() {
   }, []);
 
   function handleYes() {
+    window.scrollTo(0, 0);
     setVisible(false);
     window.dispatchEvent(new Event("ageVerified"));
   }
