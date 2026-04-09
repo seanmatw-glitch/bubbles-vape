@@ -134,15 +134,13 @@ export default function ProductShowcase() {
                 className="group flex flex-col items-center cursor-pointer text-left"
               >
                 <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 bg-white">
-                  <div className="absolute inset-0 flex items-center justify-center p-4">
-                    <Image
-                      src={product.image}
-                      alt={`Bubbles ${product.category}`}
-                      fill
-                      className="object-contain p-3"
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                    />
-                  </div>
+                  <Image
+                    src={product.image}
+                    alt={`Bubbles ${product.category}`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
                 </div>
                 <h3 className="mt-4 font-[family-name:var(--font-display)] text-base sm:text-lg font-bold text-periwinkle uppercase tracking-wider text-center">
                   {product.category}
