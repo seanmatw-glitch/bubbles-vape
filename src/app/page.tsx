@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import ProductShowcase from "@/components/ProductShowcase";
-import DeviceInfo from "@/components/DeviceInfo";
 import About from "@/components/About";
 import Newsletter from "@/components/Newsletter";
 import StoreLocator from "@/components/StoreLocator";
@@ -31,7 +30,6 @@ export default function Home() {
         </div>
         <Marquee text="Hi Bubbs" bgColor="bg-periwinkle" textColor="text-ivory" />
         <ProductShowcase />
-        <DeviceInfo />
         <About />
         <Marquee
           text="We Love Bubbs"
