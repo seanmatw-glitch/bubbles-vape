@@ -9,12 +9,6 @@ const features = [
   "Ceramic Heating",
 ];
 
-const carts = [
-  { src: "/images/cart-sativa.jpg", alt: "Sativa", color: "bg-sunrise" },
-  { src: "/images/cart-indica.jpg", alt: "Indica", color: "bg-periwinkle" },
-  { src: "/images/cart-hybrid.jpg", alt: "Hybrid", color: "bg-coral" },
-  { src: "/images/cart-exotic.jpg", alt: "Exotic", color: "bg-jade" },
-];
 
 export default function DeviceInfo() {
   return (
@@ -63,28 +57,24 @@ export default function DeviceInfo() {
           ))}
         </div>
 
-        {/* All 4 carts overlapping side by side */}
-        <div className="flex justify-center items-end mb-14">
-          <div className="flex items-end -space-x-8 sm:-space-x-12 md:-space-x-16">
-            {carts.map((cart, i) => (
-              <div
-                key={cart.alt}
-                className="relative transition-transform duration-300 hover:-translate-y-4 hover:z-20"
-                style={{
-                  zIndex: i + 1,
-                  transform: `rotate(${(i - 1.5) * 4}deg)`,
-                }}
-              >
-                <Image
-                  src={cart.src}
-                  alt={`Bubbles ${cart.alt}`}
-                  width={220}
-                  height={220}
-                  className="w-[120px] sm:w-[160px] md:w-[200px] lg:w-[220px] h-auto rounded-xl shadow-2xl"
-                />
-              </div>
-            ))}
+        {/* Single yellow cart centered with bubbles around it */}
+        <div className="relative flex justify-center items-center mb-14">
+          {/* Bubbles around the cart */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="bubble-3d absolute top-[0%] left-[25%] w-16 h-16 animate-float" />
+            <div className="bubble-3d absolute top-[10%] right-[22%] w-24 h-24 animate-float-slow" />
+            <div className="bubble-3d absolute bottom-[5%] left-[28%] w-20 h-20 animate-float-delayed" />
+            <div className="bubble-3d absolute bottom-[15%] right-[26%] w-12 h-12 animate-float" />
+            <div className="bubble-3d absolute top-[40%] left-[20%] w-10 h-10 animate-float-delayed" />
+            <div className="bubble-3d absolute top-[35%] right-[18%] w-14 h-14 animate-float-slow" />
           </div>
+          <Image
+            src="/images/cart-sativa.jpg"
+            alt="Bubbles AIO Device"
+            width={300}
+            height={300}
+            className="relative z-10 w-[180px] sm:w-[220px] md:w-[280px] lg:w-[300px] h-auto drop-shadow-2xl animate-float"
+          />
         </div>
 
         {/* Tagline */}
