@@ -71,9 +71,10 @@ export default function DeviceInfo() {
           <Image
             src="/images/cart-sativa-trans.png"
             alt="Bubbles AIO Device"
-            width={450}
-            height={450}
-            className="relative z-10 w-[250px] sm:w-[320px] md:w-[400px] lg:w-[450px] h-auto drop-shadow-2xl"
+            width={550}
+            height={370}
+            className="relative z-10 w-[280px] sm:w-[380px] md:w-[480px] lg:w-[550px] h-auto"
+            style={{ filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.3))" }}
           />
         </div>
 
