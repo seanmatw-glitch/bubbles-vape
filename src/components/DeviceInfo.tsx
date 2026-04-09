@@ -69,7 +69,7 @@ export default function DeviceInfo() {
             <div className="bubble-3d absolute top-[35%] right-[18%] w-14 h-14 animate-float-slow" />
           </div>
           <Image
-            src="/images/cart-sativa-nobg.png"
+            src="/images/cart-sativa-purple.png"
             alt="Bubbles AIO Device"
             width={450}
             height={450}
