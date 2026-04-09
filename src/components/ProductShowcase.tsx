@@ -47,7 +47,7 @@ const products = [
   {
     image: "/images/cart-sativa.jpg",
     category: "Sativa Flavors",
-    strain: "Sativa Blend",
+    strain: "Sativa Flavors",
     strainColor: "bg-sunrise text-white",
     flavors: [
       {
@@ -60,7 +60,7 @@ const products = [
   {
     image: "/images/cart-indica.jpg",
     category: "Indica Flavors",
-    strain: "Indica Blend",
+    strain: "Indica Flavors",
     strainColor: "bg-periwinkle text-white",
     flavors: [
       {
@@ -78,7 +78,7 @@ const products = [
   {
     image: "/images/cart-hybrid.jpg",
     category: "Hybrid Flavors",
-    strain: "Hybrid Blend",
+    strain: "Hybrid Flavors",
     strainColor: "bg-coral text-white",
     flavors: [
       {
@@ -96,7 +96,7 @@ const products = [
   {
     image: "/images/cart-exotic.jpg",
     category: "Exotic Flavors",
-    strain: "Exotic Blend",
+    strain: "Exotic Flavors",
     strainColor: "bg-jade text-white",
     flavors: [
       {
@@ -186,11 +186,6 @@ export default function ProductShowcase() {
                     className="object-cover sm:rounded-l-2xl"
                     sizes="400px"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-5">
-                    <h3 className="font-[family-name:var(--font-display)] text-2xl font-bold text-white uppercase tracking-wider">
-                      {active.category}
-                    </h3>
-                  </div>
                 </div>
               </div>
 
