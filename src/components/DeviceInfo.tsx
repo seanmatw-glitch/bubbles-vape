@@ -19,11 +19,16 @@ const carts = [
 export default function DeviceInfo() {
   return (
     <section className="relative py-20 px-6 overflow-hidden bg-gradient-to-br from-periwinkle via-periwinkle to-jade">
-      {/* Subtle bubbles */}
+      {/* Background bubbles — behind content */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="bubble-3d absolute top-[10%] left-[3%] w-20 h-20 animate-float-slow" />
-        <div className="bubble-3d absolute bottom-[8%] right-[5%] w-16 h-16 animate-float" />
-        <div className="bubble-3d absolute top-[60%] left-[8%] w-12 h-12 animate-float-delayed" />
+        <div className="bubble-3d absolute top-[2%] left-[2%] w-36 h-36 animate-float" />
+        <div className="bubble-3d absolute top-[8%] right-[6%] w-28 h-28 animate-float-slow" />
+        <div className="bubble-3d absolute top-[25%] left-[8%] w-14 h-14 animate-float-delayed" />
+        <div className="bubble-3d absolute top-[40%] right-[3%] w-44 h-44 animate-float" />
+        <div className="bubble-3d absolute bottom-[20%] left-[4%] w-24 h-24 animate-float-slow" />
+        <div className="bubble-3d absolute bottom-[5%] left-[25%] w-16 h-16 animate-float-delayed" />
+        <div className="bubble-3d absolute bottom-[2%] right-[15%] w-32 h-32 animate-float" />
+        <div className="bubble-3d absolute top-[55%] left-[20%] w-10 h-10 animate-float-slow" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -89,6 +94,16 @@ export default function DeviceInfo() {
             <span className="text-sunrise">big flavor</span>
           </p>
         </div>
+      </div>
+
+      {/* Foreground bubbles — float OVER content */}
+      <div className="absolute inset-0 pointer-events-none z-20">
+        <div className="bubble-3d absolute top-[5%] left-[15%] w-20 h-20 animate-float-delayed" />
+        <div className="bubble-3d absolute top-[12%] right-[12%] w-12 h-12 animate-float" />
+        <div className="bubble-3d absolute top-[50%] right-[8%] w-18 h-18 animate-float-slow" />
+        <div className="bubble-3d absolute bottom-[15%] left-[12%] w-16 h-16 animate-float" />
+        <div className="bubble-3d absolute bottom-[8%] right-[25%] w-10 h-10 animate-float-delayed" />
+        <div className="bubble-3d absolute top-[35%] left-[5%] w-22 h-22 animate-float-slow" />
       </div>
     </section>
   );
