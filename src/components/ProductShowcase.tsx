@@ -45,7 +45,7 @@ function FlavorAccordion({
 
 const products = [
   {
-    image: "/images/cart-sativa.png",
+    image: "/images/Lucid Yellow Cart.jpg",
     category: "Sativa Flavors",
     flavors: [
       {
@@ -56,7 +56,7 @@ const products = [
     ],
   },
   {
-    image: "/images/cart-indica.png",
+    image: "/images/Lucid Purple Cart.jpg",
     category: "Indica Flavors",
     flavors: [
       {
@@ -72,7 +72,7 @@ const products = [
     ],
   },
   {
-    image: "/images/cart-hybrid.png",
+    image: "/images/Lucid Pink Cart.jpg",
     category: "Hybrid Flavors",
     flavors: [
       {
@@ -88,7 +88,7 @@ const products = [
     ],
   },
   {
-    image: "/images/cart-exotic.png",
+    image: "/images/Lucid Green Cart.jpg",
     category: "Exotic Flavors",
     flavors: [
       {
