@@ -138,7 +138,7 @@ export default function ProductShowcase() {
                     src={product.image}
                     alt={`Bubbles ${product.category}`}
                     fill
-                    className="object-contain scale-115"
+                    className="object-contain scale-130"
                     sizes="(max-width: 768px) 50vw, 25vw"
                   />
                 </div>
