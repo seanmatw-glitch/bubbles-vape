@@ -47,6 +47,8 @@ const products = [
   {
     image: "/images/cart-sativa.jpg",
     category: "Sativa Flavors",
+    strain: "Sativa Blend",
+    strainColor: "bg-sunrise text-white",
     flavors: [
       {
         name: "Atomic Burst",
@@ -58,6 +60,8 @@ const products = [
   {
     image: "/images/cart-indica.jpg",
     category: "Indica Flavors",
+    strain: "Indica Blend",
+    strainColor: "bg-periwinkle text-white",
     flavors: [
       {
         name: "Blue Raz",
@@ -74,6 +78,8 @@ const products = [
   {
     image: "/images/cart-hybrid.jpg",
     category: "Hybrid Flavors",
+    strain: "Hybrid Blend",
+    strainColor: "bg-coral text-white",
     flavors: [
       {
         name: "Tiger's Blood",
@@ -90,6 +96,8 @@ const products = [
   {
     image: "/images/cart-exotic.jpg",
     category: "Exotic Flavors",
+    strain: "Exotic Blend",
+    strainColor: "bg-jade text-white",
     flavors: [
       {
         name: "Breezy Blast",
@@ -188,6 +196,14 @@ export default function ProductShowcase() {
 
               {/* Content side — accordion flavors */}
               <div className="p-6 sm:p-8 flex-1 flex flex-col justify-center">
+                <div className="mb-4">
+                  <span className={`inline-block px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider ${active.strainColor}`}>
+                    {active.strain}
+                  </span>
+                  <p className="text-gray-500 text-sm mt-2 font-medium">
+                    1-Gram All-In-One Vape
+                  </p>
+                </div>
                 <div>
                   {active.flavors.map((flavor, i) => (
                     <FlavorAccordion
