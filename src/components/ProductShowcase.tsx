@@ -157,38 +157,41 @@ export default function ProductShowcase() {
             ))}
           </div>
 
-          {/* Device info — below the carts */}
-          <div className="mt-16 text-center">
-            <p className="font-[family-name:var(--font-display)] text-base sm:text-lg font-bold text-jade uppercase tracking-[0.25em] mb-1">
-              1G Fully Customized
-            </p>
-            <h3 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-periwinkle uppercase mb-6">
-              AIO Device
-            </h3>
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
-              {["Auto-Draw", "Anti-Clogging", "Metal-Free", "Small & Compact", "USB-C Quick Charge", "Ceramic Heating"].map((feature) => (
-                <div
-                  key={feature}
-                  className="flex items-center gap-2 bg-periwinkle/10 rounded-full px-4 py-2 border border-periwinkle/20"
-                >
-                  <Image
-                    src="/images/drip-mark.png"
-                    alt=""
-                    width={14}
-                    height={18}
-                    className="w-[12px] h-auto opacity-40 mix-blend-multiply flex-shrink-0"
-                  />
-                  <span className="text-gray-600 font-semibold text-xs sm:text-sm whitespace-nowrap">
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <p className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-extrabold lowercase">
-              <span className="text-jade">big clouds </span>
-              <span className="text-sunrise">big flavor</span>
-            </p>
+        </div>
+      </section>
+
+      {/* Device info — coral background */}
+      <section className="py-14 px-6 bg-coral/30">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="font-[family-name:var(--font-display)] text-base sm:text-lg font-bold text-coral uppercase tracking-[0.25em] mb-1">
+            1G Fully Customized
+          </p>
+          <h3 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl md:text-5xl font-extrabold text-periwinkle uppercase mb-6">
+            AIO Device
+          </h3>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
+            {["Auto-Draw", "Anti-Clogging", "Metal-Free", "Small & Compact", "USB-C Quick Charge", "Ceramic Heating"].map((feature) => (
+              <div
+                key={feature}
+                className="flex items-center gap-2 bg-white/40 rounded-full px-4 py-2 border border-white/50"
+              >
+                <Image
+                  src="/images/drip-mark.png"
+                  alt=""
+                  width={14}
+                  height={18}
+                  className="w-[12px] h-auto opacity-40 mix-blend-multiply flex-shrink-0"
+                />
+                <span className="text-gray-700 font-semibold text-xs sm:text-sm whitespace-nowrap">
+                  {feature}
+                </span>
+              </div>
+            ))}
           </div>
+          <p className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-extrabold lowercase">
+            <span className="text-jade">big clouds </span>
+            <span className="text-sunrise">big flavor</span>
+          </p>
         </div>
       </section>
 
