@@ -1,6 +1,33 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect, useRef } from "react";
 
 export default function StoreLocator() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const loaded = useRef(false);
+
+  useEffect(() => {
+    if (loaded.current || !containerRef.current) return;
+    loaded.current = true;
+
+    // Load the Hoodie script
+    const script = document.createElement("script");
+    script.src = "https://askhoodie.com/assets/askhoodie.host.js";
+    script.onload = () => {
+      // Once script is loaded, initialize the embed
+      const initScript = document.createElement("script");
+      initScript.textContent = `
+        document.cookie = hoodieEmbedWtbV2(
+          "334c21fc-567f-4d45-a141-e043659bc373",
+          "askhoodieDiv",
+          document.cookie
+        );
+      `;
+      document.body.appendChild(initScript);
+    };
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <section
       id="find-us"
@@ -15,33 +42,10 @@ export default function StoreLocator() {
           find your nearest retailer.
         </p>
 
-        {/* Hoodie embed placeholder */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 min-h-[300px] flex items-center justify-center">
-          <div className="text-center text-gray-400">
-            <svg
-              className="mx-auto mb-4 w-16 h-16"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-            <p className="font-semibold text-lg">Store Locator</p>
-            <p className="text-sm mt-1">
-              Hoodie embed or custom map goes here
-            </p>
-          </div>
+        <div
+          className="bg-white rounded-2xl shadow-lg p-4 min-h-[400px] overflow-hidden"
+        >
+          <div id="askhoodieDiv" ref={containerRef} />
         </div>
       </div>
     </section>
